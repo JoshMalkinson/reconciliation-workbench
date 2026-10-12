@@ -1,0 +1,96 @@
+syntax = "proto3";
+package reconcile.v1;
+option go_package = "reconciliation-workbench/gen/reconcile/v1;reconcilev1";
+
+service WorkbenchService {
+ rpc CreateRun(CreateRunRequest) returns (Run);
+ rpc GetRun(GetRunRequest) returns (Run);
+ rpc ListRuns(Empty) returns (Runs);
+ rpc ListMappings(Empty) returns (Mappings);
+ rpc ApproveMapping(MappingRequest) returns (Mapping);
+ rpc ReviewItem(ReviewRequest) returns (Item);
+ rpc ExportRun(GetRunRequest) returns (Export);
+}
+message Empty {}
+message Holding {
+ string id = 1;
+ string shared_id = 2;
+ string name = 3;
+ string date = 4;
+ string currency = 5;
+ int32 row = 6;
+ int64 units = 7;
+ int64 value = 8;
+ repeated string original = 9;
+}
+message Event {
+ string at = 1;
+ string reviewer = 2;
+ string reason = 3;
+ string note = 4;
+ bool reviewed = 5;
+ int32 revision = 6;
+}
+message Item {
+ string id = 1;
+ Holding internal = 2;
+ Holding administrator = 3;
+ string kind = 4;
+ string basis = 5;
+ int64 units_delta = 6;
+ int64 value_delta = 7;
+ bool reviewed = 8;
+ int32 revision = 9;
+ repeated Event events = 10;
+}
+message Mapping {
+ string provider_code = 1;
+ string internal_id = 2;
+ string reviewer = 3;
+ string note = 4;
+ string at = 5;
+ string run_id = 6;
+}
+message Run {
+ string id = 1;
+ string parent_id = 2;
+ string at = 3;
+ string date = 4;
+ string internal_name = 5;
+ string administrator_name = 6;
+ string internal_hash = 7;
+ string administrator_hash = 8;
+ repeated Item items = 9;
+ repeated Mapping mappings = 10;
+}
+message Runs { repeated Run runs = 1; }
+message Mappings { repeated Mapping mappings = 1; }
+message GetRunRequest { string id = 1; }
+message CreateRunRequest {
+ string operation_id = 1;
+ string parent_id = 2;
+ bytes internal = 3;
+ bytes administrator = 4;
+ string internal_name = 5;
+ string administrator_name = 6;
+}
+message MappingRequest {
+ string operation_id = 1;
+ string run_id = 2;
+ string provider_code = 3;
+ string internal_id = 4;
+ string reviewer = 5;
+ string note = 6;
+}
+message ReviewRequest {
+ string operation_id = 1;
+ string run_id = 2;
+ string item_id = 3;
+ string reviewer = 4;
+ string reason = 5;
+ string note = 6;
+ bool reviewed = 7;
+ int32 expected_revision = 8;
+}
+message Export { bytes csv = 1; string filename = 2; }
+message ValidationDetail { string file = 1; int32 row = 2; string field = 3; string message = 4; }

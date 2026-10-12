@@ -1,0 +1,7 @@
+instrument_id,instrument_name,as_of,currency,units,market_value
+FUND-A,Protea Equity Fund A,2026-10-01,ZAR,1000,120000.00
+BOND-B,Cape Income Bond,2026-10-01,ZAR,2500,255000.00
+GLOBAL-C,Global Opportunities Fund,2026-10-01,ZAR,800,86400.00
+PROP-D,Harbour Property Fund,2026-10-01,ZAR,450,38250.00
+CASH-E,ZAR Liquidity Fund,2026-10-01,ZAR,10000,10000.00
+INDEX-F,SA Top 40 Index Fund,2026-10-01,ZAR,600,72000.00

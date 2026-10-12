@@ -1,0 +1,2 @@
+gen/** linguist-generated=true
+web/src/gen/** linguist-generated=true whitespace=-blank-at-eof

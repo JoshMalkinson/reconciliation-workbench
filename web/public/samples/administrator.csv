@@ -1,0 +1,7 @@
+provider_code,security_id,description,valuation_date,ccy,quantity,value
+EXT-001,,PROTEA EQ CL A,2026-10-01,ZAR,980,117600.00
+EXT-002,BOND-B,Cape Income Bond,2026-10-01,ZAR,2500,255000.00
+EXT-003,GLOBAL-C,Global Opportunities,2026-10-01,ZAR,805,86400.00
+EXT-004,PROP-D,Harbour Property,2026-10-01,ZAR,450,37800.00
+EXT-006,INDEX-F,SA Top 40,2026-10-01,ZAR,600,72000.00
+EXT-007,ALT-G,Alternative Credit Fund,2026-10-01,ZAR,200,22000.00

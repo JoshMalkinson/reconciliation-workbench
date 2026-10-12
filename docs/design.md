@@ -1,12 +1,12 @@
 # Reconcile — Investment Data Workbench
 
-Design for review · 12 October 2026
+Local build · 12 October 2026
 
 ## Purpose
 
 Build a separate interview project around investment-data integration and reconciliation. The user has professional Angular, React, C# and Java experience and wants a project that is visibly different from a friend's trade-compliance demo. Success is a short, explainable demonstration of conflicting provider data, deterministic matching, human review and persistent history.
 
-The existing Ledger project remains intact. This project uses Go, Vue 3, TypeScript, Protobuf and gRPC-Web. A working HTTPS demo URL, usable without the user's laptop, is a required final deliverable alongside a separate GitHub repository. SQLite was the initial local-persistence proposal; the final storage implementation must fit the selected live host before implementation begins. Local development remains supported on Windows. The earlier few-day target is treated as a reason to keep scope small, not as a confirmed new deadline.
+The existing Ledger project remains intact. This project uses Go, Vue 3, TypeScript, Protobuf and gRPC-Web. A working HTTPS demo URL, usable without the user's laptop, is a required final deliverable alongside a separate GitHub repository. The user has deferred Google Cloud: build locally with SQLite now and revisit hosted storage and access control later. Local development remains supported on Windows. The earlier few-day target is treated as a reason to keep scope small, not as a confirmed new deadline.
 
 ## Demonstration
 
@@ -100,7 +100,7 @@ AI suggestions, live provider integrations, authentication, multiple portfolios 
 
 The source and README will be prepared for a separate GitHub repository. GitHub Pages can serve the compiled Vue frontend, but cannot run the Go service or SQLite database. A fully functional public demo therefore also needs a backend host with suitable persistent storage. Hosting source code alone does not make localhost accessible to employers.
 
-The user confirmed a live full-stack site for demonstrations. Prefer serving the compiled Vue interface and Go API together from one HTTPS host, with the live link prominently displayed in the GitHub README. This avoids a separate frontend domain and cross-origin configuration. Google Cloud Run with external persistent storage is the proposed route because the job specifies GCP; Firestore is a candidate to evaluate once account availability is established. The exact storage adapter and hosted-demo access model must be settled before the implementation plan is approved.
+The user confirmed a live full-stack site for demonstrations. Prefer serving the compiled Vue interface and Go API together from one HTTPS host, with the live link prominently displayed in the GitHub README. This avoids a separate frontend domain and cross-origin configuration. Google Cloud Run with external persistent storage is the proposed route because the job specifies GCP; Firestore is a candidate to evaluate once account availability is established. The hosted storage adapter and access model will be settled when cloud deployment resumes.
 
 Live acceptance requires successful import, mapping, review and export from the public HTTPS URL, plus persistence after a server restart. The demo must have fictional samples available immediately. A shared read-only example can be public; writable runs must have an explicit ownership/access model so unrelated visitors cannot change each other's work. The user supplied Google Cloud project ID `project-3238a2d3-e039-4ed2-94a`; treat this as the intended deployment target, subject to verifying access and billing. No cloud resources or public access configuration have been created.
 
