@@ -6,7 +6,7 @@ Design for review · 12 October 2026
 
 Build a separate interview project around investment-data integration and reconciliation. The user has professional Angular, React, C# and Java experience and wants a project that is visibly different from a friend's trade-compliance demo. Success is a short, explainable demonstration of conflicting provider data, deterministic matching, human review and persistent history.
 
-The existing Ledger project remains intact. This project uses Go, Vue 3, TypeScript, Protobuf and gRPC-Web, with SQLite for local persistence. Initial delivery runs locally on Windows without Docker or a cloud account. The earlier few-day target is treated as a reason to keep scope small, not as a confirmed new deadline.
+The existing Ledger project remains intact. This project uses Go, Vue 3, TypeScript, Protobuf and gRPC-Web. A working HTTPS demo URL, usable without the user's laptop, is a required final deliverable alongside a separate GitHub repository. SQLite was the initial local-persistence proposal; the final storage implementation must fit the selected live host before implementation begins. Local development remains supported on Windows. The earlier few-day target is treated as a reason to keep scope small, not as a confirmed new deadline.
 
 ## Demonstration
 
@@ -66,13 +66,13 @@ Discrepancies have a separate review state: Open or Reviewed. Marking Reviewed r
 
 Approved mappings have one active target per administrator code. The first version permits creating mappings from currently unmatched records and viewing them; editing/deleting existing mappings is deferred. Require an explanation and record the reviewer display name and timestamp. Prevent an existing mapping from being silently replaced.
 
-Use SQLite transactions so run creation and its result rows either all persist or none do. Review changes use an expected revision to reject stale updates from another browser tab. Mutation requests carry an operation ID: a retry with the same ID and payload returns the original result; reuse with a different payload is rejected. Controls disable duplicate submissions and report failures without implying success.
+Use transactional persistence or an atomic publication marker so run creation and its result rows either all become visible or none do. Review changes use an expected revision to reject stale updates from another browser tab. Mutation requests carry an operation ID: a retry with the same ID and payload returns the original result; reuse with a different payload is rejected. Controls disable duplicate submissions and report failures without implying success.
 
 ## Architecture and storage
 
 Vue calls one Go service using generated Protobuf contracts and an explicitly selected gRPC-Web transport. Connect Go serves the browser protocol and native gRPC. The production Go process serves the frontend as well; the Vite development server proxies RPC requests. Use a separate local port, 8081, so Ledger can continue running on 8080.
 
-Keep CSV adapters, matching/comparison rules, storage and transport separate. Domain rules do not import Protobuf or SQL. SQLite stores source snapshots, runs, result items, mappings, mutation IDs and append-only review events. Source fingerprints use SHA-256. The database is stored in an ignored local data directory and is never included in GitHub. This is an application audit trail, not cryptographic tamper-proof storage.
+Keep CSV adapters, matching/comparison rules, storage and transport separate. Domain rules do not import Protobuf or a database client. Persistent storage holds source snapshots, runs, result items, mappings, mutation IDs and append-only review events. Source fingerprints use SHA-256. Data and credentials are never included in GitHub. This is an application audit trail, not cryptographic tamper-proof storage. A Cloud Run deployment must use external persistent storage; its container filesystem is not a durable database location.
 
 RPC capabilities cover creating/listing/getting runs, listing/creating mappings, marking/reopening reviews and exporting a run. Validation failures have structured locations; unexpected server failures do not expose internal paths or SQL. Apply transport size limits large enough for two allowed files plus framing. Do not log raw file contents.
 
@@ -100,4 +100,6 @@ AI suggestions, live provider integrations, authentication, multiple portfolios 
 
 The source and README will be prepared for a separate GitHub repository. GitHub Pages can serve the compiled Vue frontend, but cannot run the Go service or SQLite database. A fully functional public demo therefore also needs a backend host with suitable persistent storage. Hosting source code alone does not make localhost accessible to employers.
 
-The hosting interpretation is pending user clarification: source repository only, or source repository plus a live full-stack demo. If a live demo is required, revise storage and access requirements for the selected host before implementation. In particular, do not assume that a local SQLite file survives restarts on an ephemeral container host. No hosting account, paid resource or public access configuration has been selected or created.
+The user confirmed a live full-stack site for demonstrations. Prefer serving the compiled Vue interface and Go API together from one HTTPS host, with the live link prominently displayed in the GitHub README. This avoids a separate frontend domain and cross-origin configuration. Google Cloud Run with external persistent storage is the proposed route because the job specifies GCP; Firestore is a candidate to evaluate once account availability is established. The exact storage adapter and hosted-demo access model must be settled before the implementation plan is approved.
+
+Live acceptance requires successful import, mapping, review and export from the public HTTPS URL, plus persistence after a server restart. The demo must have fictional samples available immediately. A shared read-only example can be public; writable runs must have an explicit ownership/access model so unrelated visitors cannot change each other's work. Account availability is currently awaiting the user's answer. No hosting account, paid resource or public access configuration has been selected or created.
