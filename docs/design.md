@@ -94,4 +94,10 @@ Download a CSV report containing each item, source IDs/names/row numbers, date, 
 
 Build one vertical slice first: two-file import, deterministic matching and differences. Add persistence and history, then mapping/review actions, then export and presentation polish. This is one application with one workflow; no microservice split is needed.
 
-AI suggestions, live provider integrations, authentication, multiple portfolios per file, configurable tolerances, cloud deployment and collaborative roles are outside the first release. Public GitHub publication for this separate project will be handled once there is a verified deliverable; the existing Ledger repository is not repurposed.
+AI suggestions, live provider integrations, authentication, multiple portfolios per file, configurable tolerances and collaborative roles are outside the initial local build. The user has requested GitHub hosting for this separate project; the existing Ledger repository is not repurposed.
+
+## GitHub and live-demo delivery
+
+The source and README will be prepared for a separate GitHub repository. GitHub Pages can serve the compiled Vue frontend, but cannot run the Go service or SQLite database. A fully functional public demo therefore also needs a backend host with suitable persistent storage. Hosting source code alone does not make localhost accessible to employers.
+
+The hosting interpretation is pending user clarification: source repository only, or source repository plus a live full-stack demo. If a live demo is required, revise storage and access requirements for the selected host before implementation. In particular, do not assume that a local SQLite file survives restarts on an ephemeral container host. No hosting account, paid resource or public access configuration has been selected or created.
