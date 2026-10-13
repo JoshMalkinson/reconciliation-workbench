@@ -3,7 +3,7 @@
   color: #233443;
   background: #f5f6f8;
   font-synthesis: none;
-  font-size: 28px;
+  font-size: 22.5px;
 }
 * {
   box-sizing: border-box;
@@ -52,19 +52,19 @@ p {
   margin: 0;
 }
 h1 {
-  font-size: 36.25px;
+  font-size: 32.625px;
   letter-spacing: -1px;
   font-weight: 650;
 }
 h2 {
-  font-size: 28px;
+  font-size: 24px;
   font-weight: 650;
 }
 h3 {
-  font-size: 28px;
+  font-size: 22.5px;
 }
 small {
-  font-size: 28px;
+  font-size: 21px;
 }
 input,
 select,
@@ -82,7 +82,7 @@ textarea {
 }
 label {
   display: block;
-  font-size: 30px;
+  font-size: 22.5px;
   font-weight: 600;
 }
 label input,
@@ -100,7 +100,7 @@ label + label {
 .sidebar {
   background: #192a39;
   color: #cfdae3;
-  width: 390px;
+  width: 330px;
   flex-shrink: 0;
   display: flex;
   flex-direction: column;
@@ -114,7 +114,7 @@ label + label {
   gap: 10px;
   padding: 30px 22px;
   color: #fff;
-  font-size: 33.75px;
+  font-size: 30.375px;
   font-weight: 650;
   letter-spacing: -1px;
 }
@@ -133,11 +133,11 @@ label + label {
   right: 2px;
   bottom: 0;
   font-family: Arial;
-  font-size: 28px;
+  font-size: 24px;
 }
 .brand-sub {
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 1.1px;
   color: #a9bac8;
   margin-top: 4px;
@@ -150,12 +150,12 @@ label + label {
   padding: 13px 9px;
   border-top: 1px solid #344453;
   border-bottom: 1px solid #344453;
-  font-size: 30px;
+  font-size: 22.5px;
 }
 .workspace-label small {
   display: block;
   color: #8fa2b3;
-  font-size: 26px;
+  font-size: 19.5px;
   margin-top: 4px;
 }
 .avatar {
@@ -187,7 +187,7 @@ label + label {
   width: 100%;
   text-align: left;
   padding: 13px 14px;
-  font-size: 30px;
+  font-size: 22.5px;
   margin: 3px 0;
 }
 .sidebar nav button.active {
@@ -208,14 +208,14 @@ label + label {
   display: flex;
   justify-content: space-between;
   letter-spacing: 1.4px;
-  font-size: 24px;
+  font-size: 18px;
   color: #8197a9;
   margin: 32px 26px 16px;
 }
 .history-empty {
   margin: 0 25px;
   color: #91a5b6;
-  font-size: 30px;
+  font-size: 22.5px;
   line-height: 1.7;
 }
 .history-list {
@@ -240,13 +240,13 @@ label + label {
   border-color: #3a5061;
 }
 .history-item strong {
-  font-size: 28px;
+  font-size: 21px;
   font-weight: 500;
 }
 .history-item small {
   display: block;
   margin-top: 5px;
-  font-size: 24px;
+  font-size: 18px;
   color: #94a9b9;
 }
 .history-dot {
@@ -259,14 +259,14 @@ label + label {
   background: #e5a15c;
 }
 .latest {
-  font-size: 24px;
+  font-size: 18px;
   margin-left: auto;
   color: #d5ad7e;
 }
 .sidebar-bottom {
   padding: 23px;
   color: #a6b7c4;
-  font-size: 26px;
+  font-size: 19.5px;
   border-top: 1px solid #304453;
   margin-top: 20px;
 }
@@ -275,7 +275,7 @@ label + label {
 }
 .sidebar-bottom small {
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   color: #70899b;
   margin: 8px 0 0 13px;
 }
@@ -291,7 +291,7 @@ main {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  font-size: 28px;
+  font-size: 21px;
   color: #566573;
 }
 .topbar span {
@@ -299,7 +299,7 @@ main {
   color: #adb6bd;
 }
 .demo-tag {
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 1.2px;
   color: #77848e;
 }
@@ -316,14 +316,14 @@ main {
   margin-bottom: 27px;
 }
 .eyebrow {
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 1.7px;
   color: #8b7560;
   font-weight: 650;
   margin-bottom: 10px;
 }
 .page-heading p {
-  font-size: 30px;
+  font-size: 22.5px;
   color: #7b8690;
   margin-top: 10px;
 }
@@ -361,20 +361,20 @@ main {
   gap: 12px;
 }
 .run-bar strong {
-  font-size: 30px;
+  font-size: 22.5px;
 }
 .run-bar small {
   display: block;
-  font-size: 26px;
+  font-size: 19.5px;
   color: #8b949c;
   margin-top: 5px;
 }
 .run-icon {
-  font-size: 27.5px;
+  font-size: 24.75px;
   color: #8a9daa;
 }
 .actions button {
-  font-size: 28px;
+  font-size: 21px;
   padding: 8px 11px;
 }
 .stats {
@@ -390,23 +390,23 @@ main {
   padding: 17px 18px;
 }
 .stats span {
-  font-size: 28px;
+  font-size: 21px;
   color: #72818d;
 }
 .stats strong {
   display: flex;
   justify-content: space-between;
-  font-size: 37.5px;
+  font-size: 33.75px;
   font-weight: 600;
   margin: 7px 0;
 }
 .stats small {
-  font-size: 24px;
+  font-size: 18px;
   color: #98a0a7;
 }
 .stats em {
   font-style: normal;
-  font-size: 30px;
+  font-size: 22.5px;
   align-self: center;
   border-radius: 50%;
   width: 21px;
@@ -440,15 +440,15 @@ main {
   padding: 21px 20px 18px;
 }
 .section-heading h2 {
-  font-size: 28px;
+  font-size: 22.5px;
 }
 .section-heading p {
-  font-size: 26px;
+  font-size: 19.5px;
   color: #89959e;
   margin-top: 8px;
 }
 .count {
-  font-size: 26px;
+  font-size: 19.5px;
   background: #edf0f3;
   padding: 3px 6px;
   border-radius: 4px;
@@ -457,7 +457,7 @@ main {
   color: #73818c;
 }
 .live-label {
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 1px;
   color: #839b8f;
   white-space: nowrap;
@@ -469,7 +469,7 @@ main {
 }
 .filters input,
 .filters select {
-  font-size: 26px;
+  font-size: 19.5px;
   padding: 9px;
 }
 .filters select {
@@ -487,7 +487,7 @@ table {
   text-align: left;
 }
 th {
-  font-size: 24px;
+  font-size: 18px;
   background: #f7f9fa;
   padding: 12px 17px;
   border-block: 1px solid #e9edf0;
@@ -498,15 +498,15 @@ th {
 td {
   padding: 17px 16px;
   border-bottom: 1px solid #edf0f2;
-  font-size: 28px;
+  font-size: 21px;
 }
 td strong {
-  font-size: 28px;
+  font-size: 21px;
   display: block;
 }
 td small {
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   color: #8c969f;
   line-height: 1.5;
   margin-top: 5px;
@@ -523,7 +523,7 @@ td:last-child {
   padding: 10px;
 }
 .badge {
-  font-size: 24px;
+  font-size: 18px;
   padding: 5px 7px;
   border-radius: 4px;
   white-space: nowrap;
@@ -542,7 +542,7 @@ td:last-child {
   color: #4d826c;
 }
 .review-label {
-  font-size: 24px;
+  font-size: 18px;
   white-space: nowrap;
   color: #8c979f;
 }
@@ -552,7 +552,7 @@ td:last-child {
 .inspect {
   border: 0;
   background: transparent;
-  font-size: 28px;
+  font-size: 24.5px;
   padding: 5px;
   color: #7e92a2;
 }
@@ -561,7 +561,7 @@ td:last-child {
   justify-content: space-between;
   padding: 16px 20px;
   color: #96a1a9;
-  font-size: 24px;
+  font-size: 18px;
 }
 .detail {
   padding: 22px;
@@ -574,20 +574,20 @@ td:last-child {
   margin-bottom: 18px;
 }
 .detail-top .eyebrow {
-  font-size: 24px;
+  font-size: 18px;
   margin: 0;
   letter-spacing: 1px;
 }
 .detail-top .badge {
-  font-size: 24px;
+  font-size: 18px;
 }
 .detail h2 {
-  font-size: 28px;
+  font-size: 24.5px;
   line-height: 1.4;
   overflow-wrap: anywhere;
 }
 .identity {
-  font-size: 26px;
+  font-size: 19.5px;
   color: #81909a;
   margin-top: 7px;
 }
@@ -598,7 +598,7 @@ td:last-child {
 .basis {
   display: flex;
   justify-content: space-between;
-  font-size: 24px;
+  font-size: 18px;
   margin: 18px 0;
   color: #7b8b96;
 }
@@ -617,7 +617,7 @@ td:last-child {
   padding-left: 17px;
 }
 .source-grid h3 {
-  font-size: 24px;
+  font-size: 18px;
   letter-spacing: 1px;
   color: #8797a4;
 }
@@ -625,22 +625,22 @@ td:last-child {
   margin: 15px 0 0;
 }
 .source-grid dt {
-  font-size: 24px;
+  font-size: 18px;
   color: #929fa9;
   margin-top: 13px;
 }
 .source-grid dd {
   margin: 5px 0 0;
-  font-size: 32px;
+  font-size: 24px;
   font-weight: 600;
   font-variant-numeric: tabular-nums;
 }
 .source-grid dd:last-child {
-  font-size: 28px;
+  font-size: 21px;
   font-weight: 400;
 }
 .missing {
-  font-size: 30px;
+  font-size: 22.5px;
   color: #9ba7af;
   line-height: 1.8;
   margin-top: 17px;
@@ -655,18 +655,18 @@ td:last-child {
   gap: 10px;
 }
 .deltas small {
-  font-size: 24px;
+  font-size: 18px;
   color: #a28d70;
 }
 .deltas strong {
   display: block;
-  font-size: 28px;
+  font-size: 23px;
   margin-top: 7px;
   color: #9c713b;
   font-variant-numeric: tabular-nums;
 }
 .originals {
-  font-size: 26px;
+  font-size: 19.5px;
   color: #80919d;
   margin: 17px 0;
 }
@@ -676,7 +676,7 @@ td:last-child {
 .originals pre {
   white-space: pre-wrap;
   overflow-wrap: anywhere;
-  font-size: 26px;
+  font-size: 19.5px;
   line-height: 1.6;
   color: #4c5f6c;
 }
@@ -690,31 +690,31 @@ td:last-child {
   padding-top: 19px;
 }
 .form-section h3 {
-  font-size: 32px;
+  font-size: 24px;
 }
 .form-section p {
-  font-size: 26px;
+  font-size: 19.5px;
   line-height: 1.7;
   color: #92a0aa;
   margin: 8px 0 16px;
 }
 .form-section label {
-  font-size: 26px;
+  font-size: 19.5px;
 }
 .form-section input,
 .form-section textarea,
 .form-section select {
-  font-size: 28px;
+  font-size: 21px;
   padding: 9px;
 }
 .form-section .primary {
-  font-size: 28px;
+  font-size: 21px;
   margin-top: 14px;
   padding: 10px;
 }
 .form-section > small {
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   color: #99a4ab;
   margin-top: 10px;
 }
@@ -724,7 +724,7 @@ td:last-child {
   padding-top: 19px;
 }
 .timeline h3 {
-  font-size: 30px;
+  font-size: 22.5px;
 }
 .timeline article {
   border-left: 2px solid #e1e8ed;
@@ -732,21 +732,21 @@ td:last-child {
   margin-top: 17px;
 }
 .timeline strong {
-  font-size: 26px;
+  font-size: 19.5px;
 }
 .timeline small {
   display: block;
-  font-size: 24px;
+  font-size: 18px;
   color: #98a5af;
   margin: 7px 0;
 }
 .timeline p {
-  font-size: 28px;
+  font-size: 21px;
   line-height: 1.6;
   overflow-wrap: anywhere;
 }
 .provenance {
-  font-size: 26px;
+  font-size: 19.5px;
   color: #8797a3;
   margin-top: 24px;
   overflow-wrap: anywhere;
@@ -767,7 +767,7 @@ td:last-child {
   gap: 15px;
   margin-top: 35px;
   color: #9da8b0;
-  font-size: 24px;
+  font-size: 18px;
 }
 .page-footer > span:first-child {
   letter-spacing: 0.5px;
@@ -779,7 +779,7 @@ td:last-child {
   padding: 13px 16px;
   border-radius: 6px;
   margin: 0 0 18px;
-  font-size: 30px;
+  font-size: 22.5px;
   line-height: 1.6;
 }
 .message.error {
@@ -793,7 +793,7 @@ td:last-child {
 .message button {
   padding: 4px 8px;
   margin-left: 8px;
-  font-size: 28px;
+  font-size: 21px;
 }
 .welcome {
   text-align: center;
@@ -812,7 +812,7 @@ td:last-child {
   border: 1px solid #e1e6e9;
   border-radius: 7px;
   padding: 22px;
-  font-size: 26px;
+  font-size: 19.5px;
   color: #b18659;
   background: linear-gradient(145deg, #fff, #f4f7f9);
   transform: rotate(-4deg);
@@ -824,18 +824,18 @@ td:last-child {
 .welcome-art b {
   display: block;
   color: #537084;
-  font-size: 32px;
+  font-size: 24px;
   margin-top: 12px;
   font-weight: 500;
 }
 .welcome-art i {
-  font-size: 33.75px;
+  font-size: 30.375px;
   color: #a6b2bb;
   font-style: normal;
 }
 .welcome h2 {
   font-family: Georgia, serif;
-  font-size: 40px;
+  font-size: 36px;
   font-weight: 400;
   letter-spacing: -0.5px;
   margin: 15px 0;
@@ -844,13 +844,13 @@ td:last-child {
   color: #84939e;
   max-width: 425px;
   line-height: 1.9;
-  font-size: 32px;
+  font-size: 24px;
   margin: 0 auto 25px;
 }
 .welcome > small {
   display: block;
   color: #98a5ae;
-  font-size: 26px;
+  font-size: 19.5px;
   margin-top: 13px;
 }
 .welcome-steps {
@@ -861,11 +861,11 @@ td:last-child {
   margin-top: 45px;
   padding-top: 28px;
   color: #8697a3;
-  font-size: 28px;
+  font-size: 21px;
 }
 .welcome-steps b {
   color: #b28c60;
-  font-size: 26px;
+  font-size: 19.5px;
   margin-right: 9px;
   font-weight: 500;
 }
@@ -873,7 +873,7 @@ td:last-child {
   padding: 40px;
   text-align: center;
   color: #95a0a8;
-  font-size: 30px;
+  font-size: 22.5px;
   line-height: 1.8;
 }
 .mappings {
@@ -881,7 +881,7 @@ td:last-child {
 }
 .muted {
   color: #92a0aa;
-  font-size: 28px;
+  font-size: 21px;
   line-height: 1.8;
   margin-top: 16px;
 }
@@ -894,7 +894,7 @@ td:last-child {
   background: #f1f5f7;
   padding: 6px 9px;
   border-radius: 4px;
-  font-size: 28px;
+  font-size: 21px;
 }
 .mapping .arrow {
   margin: 0 20px;
@@ -902,7 +902,7 @@ td:last-child {
 }
 .mapping p {
   margin: 18px 0 8px;
-  font-size: 30px;
+  font-size: 22.5px;
 }
 .mapping small {
   color: #97a3ac;
@@ -910,7 +910,7 @@ td:last-child {
 .mapping button {
   display: block;
   margin-top: 12px;
-  font-size: 26px;
+  font-size: 19.5px;
 }
 .modal-backdrop {
   position: fixed;
@@ -924,16 +924,16 @@ td:last-child {
   z-index: 20;
 }
 .modal {
-  width: 760px;
+  width: 640px;
   max-height: 90vh;
   overflow: auto;
   padding: 28px;
 }
 .modal h2 {
-  font-size: 28px;
+  font-size: 24.5px;
 }
 .modal > p {
-  font-size: 30px;
+  font-size: 22.5px;
   line-height: 1.8;
   color: #8a99a4;
   margin: 17px 0 25px;
@@ -942,15 +942,15 @@ td:last-child {
   margin-top: 23px;
 }
 .modal input {
-  font-size: 28px;
+  font-size: 21px;
 }
 .modal a {
-  font-size: 26px;
+  font-size: 19.5px;
   display: block;
   margin-top: 10px;
 }
 .import-note {
-  font-size: 28px;
+  font-size: 21px;
   line-height: 1.8;
   background: #f3f6f8;
   padding: 14px;
@@ -961,7 +961,7 @@ td:last-child {
   width: 100%;
   background: none;
   border: 0;
-  font-size: 28px;
+  font-size: 21px;
   color: #7d8f9c;
   margin-top: 9px;
 }
@@ -986,11 +986,11 @@ td:last-child {
 }
 @media (max-width: 1800px) {
   .sidebar {
-    width: 360px;
+    width: 310px;
   }
   .brand {
     padding-inline: 17px;
-    font-size: 30px;
+    font-size: 27px;
   }
   .content {
     padding: 23px;
@@ -1018,10 +1018,10 @@ td:last-child {
     display: block;
   }
   .stats span {
-    font-size: 26px;
+    font-size: 19.5px;
   }
 }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .shell {
     display: block;
   }
@@ -1033,10 +1033,10 @@ td:last-child {
   }
   .brand {
     padding: 16px 20px;
-    font-size: 28.75px;
+    font-size: 25.875px;
   }
   .brand-sub {
-    font-size: 24px;
+    font-size: 18px;
   }
   .brand-icon {
     width: 29px;
@@ -1053,7 +1053,7 @@ td:last-child {
     padding: 0 10px 10px;
   }
   .sidebar nav button {
-    font-size: 26px;
+    font-size: 19.5px;
     padding: 10px;
     justify-content: center;
   }
@@ -1076,10 +1076,10 @@ td:last-child {
   .topbar {
     padding-inline: 18px;
     height: 44px;
-    font-size: 24px;
+    font-size: 18px;
   }
   .demo-tag {
-    font-size: 24px;
+    font-size: 18px;
   }
   .content {
     padding: 24px 16px;
@@ -1089,17 +1089,17 @@ td:last-child {
     gap: 10px;
   }
   h1 {
-    font-size: 30px;
+    font-size: 27px;
   }
   .eyebrow {
-    font-size: 24px;
+    font-size: 18px;
   }
   .page-heading p {
-    font-size: 28px;
+    font-size: 21px;
     line-height: 1.8;
   }
   .page-heading > .primary {
-    font-size: 26px;
+    font-size: 19.5px;
     white-space: nowrap;
     padding: 9px;
   }
@@ -1111,7 +1111,7 @@ td:last-child {
     margin-top: 15px;
   }
   .run-bar small {
-    font-size: 24px;
+    font-size: 18px;
   }
   .stats {
     grid-template-columns: 1fr 1fr;
@@ -1121,50 +1121,50 @@ td:last-child {
     padding: 14px;
   }
   .stats strong {
-    font-size: 33.75px;
+    font-size: 30.375px;
   }
   .stats small {
-    font-size: 24px;
+    font-size: 18px;
   }
   .section-heading h2 {
-    font-size: 30px;
+    font-size: 22.5px;
   }
   .results .section-heading {
     padding: 17px 13px;
   }
   .live-label {
-    font-size: 24px;
+    font-size: 18px;
   }
   .filters {
     padding-inline: 13px;
   }
   .filters input,
   .filters select {
-    font-size: 24px;
+    font-size: 18px;
   }
   th,
   td {
     padding: 12px 9px;
   }
   th {
-    font-size: 24px;
+    font-size: 18px;
   }
   td strong {
-    font-size: 24px;
+    font-size: 18px;
   }
   td small {
-    font-size: 24px;
+    font-size: 18px;
     max-width: 95px;
   }
   .badge {
-    font-size: 24px;
+    font-size: 18px;
     padding: 4px;
   }
   .review-label {
-    font-size: 24px;
+    font-size: 18px;
   }
   .inspect {
-    font-size: 28px;
+    font-size: 23px;
     padding: 3px;
   }
   .detail {
@@ -1181,11 +1181,11 @@ td:last-child {
     padding: 16px;
   }
   .welcome h2 {
-    font-size: 33.75px;
+    font-size: 30.375px;
   }
   .welcome-steps {
     gap: 16px;
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.8;
   }
   .welcome-steps b {
@@ -1193,7 +1193,7 @@ td:last-child {
     margin: 0;
   }
   .page-footer {
-    font-size: 24px;
+    font-size: 18px;
     line-height: 1.8;
   }
   .page-footer > span:last-child {
@@ -1212,7 +1212,7 @@ td:last-child {
   margin-top: 16px;
 }
 .investigation-tabs button {
-  font-size: 26px;
+  font-size: 19.5px;
   flex: 1;
 }
 .investigation-tabs button[aria-pressed="true"] {
@@ -1227,22 +1227,22 @@ body { line-height: 1.45; }
 .basis, .results-footer, .page-footer, .welcome-steps { flex-wrap: wrap; }
 .page-heading > div, .stats > div, .results, .detail, .source-grid > div { min-width: 0; }
 .sidebar { overflow-y: auto; }
-.brand-sub { font-size: 24px; letter-spacing: 0; }
+.brand-sub { font-size: 18px; letter-spacing: 0; }
 .brand-icon { flex-shrink: 0; }
 .history-item { flex-wrap: wrap; }
 .history-list { min-height: 150px; }
 .stats { grid-template-columns: repeat(2, minmax(0, 1fr)); }
-.stats em { width: 40px; height: 40px; }
+.stats em { width: 32px; height: 32px; }
 .workbench { grid-template-columns: minmax(0, 1fr); }
 .source-grid dd { overflow-wrap: anywhere; }
 .filters { flex-wrap: wrap; }
 .filters select, .filters input { width: auto; flex: 1 1 260px; min-width: 0; }
 .live-label, .badge, .review-label { white-space: normal; }
-.welcome p { max-width: 760px; }
+.welcome p { max-width: 640px; }
 .welcome-art > span { width: 240px; }
 .modal { max-width: 100%; }
 .modal a { text-decoration: underline; }
-@media (max-width: 1000px) {
+@media (max-width: 800px) {
   .sidebar nav { flex-wrap: wrap; }
   .sidebar nav button { flex: 1 1 250px; }
   .history-list { min-height: 0; max-height: 190px; }
@@ -1252,7 +1252,7 @@ body { line-height: 1.45; }
   .source-grid > div + div { border-left: 0; padding-left: 0; border-top: 1px solid #e9edf0; padding-top: 20px; }
   .welcome-art { flex-wrap: wrap; }
   .welcome-art > span { width: 220px; }
-  .brand-sub { font-size: 24px; }
+  .brand-sub { font-size: 18px; }
 }
 @media (max-width: 480px) {
   .stats { grid-template-columns: minmax(0, 1fr); }
