@@ -2,6 +2,10 @@
 
 **An investment data reconciliation workbench built with Go, Vue, TypeScript, Protobuf and gRPC-Web.**
 
+**[Open the live demo](https://reconcile-495378339339.europe-west1.run.app)** · [Logic and technology diagrams](#how-the-logic-works)
+
+Click **Try the sample portfolio** to begin. Each browser gets an isolated demo workspace; use fictional data only.
+
 Two providers describe the same holdings differently. Reconcile imports their CSV files, matches instrument identities, highlights quantity and valuation differences, and records how each exception was investigated.
 
 The key distinction: approving an instrument's identity does **not** make its balances agree. Reviewing a discrepancy records a decision without erasing the difference.
