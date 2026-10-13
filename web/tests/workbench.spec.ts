@@ -111,6 +111,7 @@ test("invalid uploads show location and imported markup stays literal", async ({
   await page
     .getByRole("button", { name: "Compare files", exact: true })
     .click();
+  await expect(page.getByRole("dialog")).toHaveCount(0);
   await page.getByLabel("Filter records").selectOption("all");
   await page.getByRole("button", { name: "Inspect A" }).click();
   await expect(

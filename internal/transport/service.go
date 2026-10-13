@@ -15,9 +15,17 @@ import (
 	"reconciliation-workbench/internal/store"
 )
 
-type service struct{ db *store.Store }
+type Repository interface {
+	Create(store.CreateRequest) (*store.Run, error)
+	Get(string) (*store.Run, error)
+	List() ([]store.Run, error)
+	Mappings() ([]store.Mapping, error)
+	Map(store.MappingRequest) (*store.Mapping, error)
+	Review(store.ReviewRequest) (*store.Item, error)
+}
+type service struct{ db Repository }
 
-func Handler(db *store.Store) http.Handler {
+func Handler(db Repository) http.Handler {
 	mux := http.NewServeMux()
 	path, h := rpc.NewWorkbenchServiceHandler(&service{db}, connect.WithReadMaxBytes(3<<20), connect.WithSendMaxBytes(16<<20))
 	mux.Handle(path, h)

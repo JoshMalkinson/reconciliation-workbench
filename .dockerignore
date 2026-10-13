@@ -1,0 +1,11 @@
+.git
+.superpowers
+data
+bin
+.tools
+web/node_modules
+web/dist
+web/test-results
+web/playwright-report
+.env*
+*.db*

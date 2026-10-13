@@ -65,6 +65,15 @@ const hasMapping = computed(() =>
   mappings.value.some((m) => m.providerCode === item.value?.administrator?.id),
 );
 const operationIDs = new Map<string, string>();
+const hosted = ref(false);
+onMounted(async () => {
+  try {
+    const config = await fetch("/api/config");
+    if (config.ok) hosted.value = (await config.json()).hosted === true;
+  } catch {
+    /* The main RPC loading path reports connection failures. */
+  }
+});
 const investigationAction = ref("map");
 let previousFocus: HTMLElement | null = null;
 watch(importOpen, async (open) => {
@@ -320,7 +329,7 @@ onMounted(async () => {
   } catch (e) {
     if (version === loadVersion)
       error.value =
-        "Could not load saved runs. Check that the local server is running.";
+        "Could not load saved runs. Check your connection and reload the page.";
   } finally {
     loading.value = false;
   }
@@ -344,7 +353,10 @@ onMounted(async () => {
       >
       <div class="workspace-label">
         <span class="avatar">J</span>
-        <div>Local workspace<small>Investment operations</small></div>
+        <div>
+          {{ hosted ? "Your demo workspace" : "Local workspace"
+          }}<small>Investment operations</small>
+        </div>
         <span class="dot"></span>
       </div>
       <nav aria-label="Workspace">
@@ -386,9 +398,9 @@ onMounted(async () => {
         </button>
       </div>
       <div class="sidebar-bottom">
-        <span class="dot"></span> Stored on this computer<small
-          >Runs, mappings and review notes</small
-        >
+        <span class="dot"></span>
+        {{ hosted ? "Saved in your demo workspace" : "Stored on this computer"
+        }}<small>Runs, mappings and review notes</small>
       </div>
     </aside>
     <main :inert="importOpen" :aria-hidden="importOpen || undefined">
@@ -397,7 +409,11 @@ onMounted(async () => {
           Workspace <span>/</span>
           {{ view === "mappings" ? "Instrument mappings" : "Reconciliation" }}
         </div>
-        <div class="demo-tag">LOCAL DEMO WORKSPACE</div>
+        <div class="demo-tag">
+          {{
+            hosted ? "PUBLIC DEMO · PRIVATE WORKSPACE" : "LOCAL DEMO WORKSPACE"
+          }}
+        </div>
       </header>
       <div class="content">
         <div class="page-heading">
@@ -430,6 +446,11 @@ onMounted(async () => {
             ＋ New import
           </button>
         </div>
+        <p v-if="hosted" class="message">
+          Your browser has its own demo workspace. Use fictional data only.
+          Sessions last 7 days, with up to 20 runs; clearing browser cookies
+          starts a new workspace. Export anything you want to keep.
+        </p>
         <div v-if="error && !importOpen" role="alert" class="message error">
           {{ error }}
           <button v-if="run" :disabled="busy" @click="openRun(run.id)">

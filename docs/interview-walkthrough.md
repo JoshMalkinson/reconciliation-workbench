@@ -38,4 +38,4 @@ Use this as a starting point in your own words. Be clear about which parts you i
 
 ## Next engineering step
 
-The local app binds to loopback and has no authenticated users. Before public hosting, choose durable hosted storage and isolate each visitor's writable data. Google Cloud deployment is deferred; do not present it as already deployed or claim Cloud Run's local filesystem is durable storage.
+The local app binds to loopback. Hosted mode uses Cloud Run and private Cloud Storage snapshots, with separate cookie-based visitor workspaces. Explain the throughput tradeoff of reading and conditionally publishing a whole SQLite snapshot; for a production system, use authenticated users and a transactional hosted database. Cloud Run's temporary filesystem is never the durable store.

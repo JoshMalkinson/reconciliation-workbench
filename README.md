@@ -59,7 +59,56 @@ flowchart TD
     N --> O
 ```
 
-## What the system demonstrates
+## How the logic works
+
+```mermaid
+flowchart TD
+    UI["Vue + TypeScript: select two CSV files"] --> RPC["Protobuf contract + gRPC-Web: send typed request"]
+    RPC --> API["Connect Go: receive request"]
+    API --> VALID{"Go CSV adapters: valid headers, dates, IDs and decimals?"}
+    VALID -->|No| ERROR["Return file, row and field error; save no run"]
+    VALID -->|Yes| ID{"Administrator has a shared security ID?"}
+    ID -->|Yes| EXACT["Look up the same internal instrument ID"]
+    ID -->|No| MAP["Look up an approved provider-code mapping"]
+    EXACT --> FOUND{"Internal holding exists?"}
+    MAP --> FOUND
+    FOUND -->|No| MISSING["Keep holding unmatched; never guess from its name"]
+    FOUND -->|Yes| UNIQUE{"Already paired with another administrator row?"}
+    UNIQUE -->|Yes| CONFLICT["Reject mapping conflict; save no run"]
+    UNIQUE -->|No| CALC["Go int64: administrator minus internal"]
+    CALC --> CLASSIFY["Classify: matched, units difference, value difference, or both"]
+    CLASSIFY --> SAVE["SQLite transaction: save immutable run, sources and mapping snapshot"]
+    MISSING --> SAVE
+    SAVE --> DISPLAY["Vue: show both records; format exact values with bigint"]
+    DISPLAY --> REVIEW["Reviewer adds reason and note"]
+    REVIEW --> EVENTS["SQLite: check revision, append event; retain original difference"]
+    DISPLAY --> APPROVE["Reviewer approves unmatched identity pair"]
+    APPROVE --> RERUN["New run uses latest mappings; old run stays unchanged"]
+    RERUN --> MAP
+    EVENTS --> EXPORT["Go: export CSV with review state and formula-safe text"]
+```
+
+**Example:** internal FUND-A has 1,000 units worth ZAR 120,000. Administrator EXT-001 has 980 units worth ZAR 117,600. Before mapping, they are two unmatched holdings. Approving EXT-001 → FUND-A and rerunning produces **−20 units** and **−ZAR 2,400**. Marking the item Reviewed adds a decision; it does not remove those differences.
+
+SQLite runs the same comparison and review transactions locally and in hosted workspaces. The hosted adapter stores each workspace durably in private Cloud Storage, as shown below.
+
+```mermaid
+flowchart LR
+    B["Browser: Vue + TypeScript"] -->|"HTTPS + gRPC-Web"| R["Google Cloud Run: Go + Connect"]
+    P["Protobuf contract"] -.->|"Generated messages and clients"| B
+    P -.->|"Generated service bindings"| R
+    R --> C["Secure cookie selects an isolated workspace"]
+    C --> L["Load SQLite snapshot into a temporary directory"]
+    L --> T["Run validated transaction"]
+    T --> W["Checkpoint and conditionally publish snapshot"]
+    W -->|"Generation must still match"| S[("Private Google Cloud Storage")]
+    S --> L
+    W -->|"Only after durable save"| OK["Return success to browser"]
+```
+
+For an interview: **Vue displays the workflow, Protobuf defines the contract, gRPC-Web carries the request, Go makes the decisions, SQLite commits the transaction, Cloud Storage preserves hosted workspaces, and Cloud Run serves the app.**
+
+## Technologies and responsibilities
 
 | Concern | Implementation |
 | --- | --- |
@@ -91,7 +140,7 @@ provider_code,security_id,description,valuation_date,ccy,quantity,value
 
 Both files must use UTF-8 and the exact header order. A single valuation date must agree across both sources. IDs are trimmed and uppercased; duplicates are rejected. Only ZAR is supported. Units allow six decimal places, values allow two, and both must be positive and at most 1,000,000,000. Each file allows up to 1,000 holdings and 1 MiB. Blank `security_id` values require an approved mapping. Nonempty security IDs cannot be overridden by a mapping.
 
-Approved mappings affect future runs. Version one permits creating and inspecting mappings, with no replacement or deletion. The database is a local application audit trail, not cryptographic proof against database tampering. Public hosting and its storage/access model are planned separately.
+Approved mappings affect future runs. Version one permits creating and inspecting mappings, with no replacement or deletion. The database is an application audit trail, not cryptographic proof against database tampering. Hosted demo sessions are isolated by browser cookie, last seven days, and allow up to 20 runs within a 32 MiB workspace. Use fictional data and export anything you want to retain. See [hosting details](docs/hosting.md).
 
 ## Development and verification
 
