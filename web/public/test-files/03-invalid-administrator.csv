@@ -1,0 +1,4 @@
+provider_code,security_id,description,valuation_date,ccy,quantity,value
+TEST-EXT-1,TEST-EQUITY,Fictional Equity,2026-10-12,ZAR,oops,120000.00
+TEST-EXT-2,TEST-BOND,Fictional Bond,2026-10-12,ZAR,2500,255000.00
+TEST-EXT-3,TEST-CASH,Fictional Cash,2026-10-12,ZAR,10000,10000.00

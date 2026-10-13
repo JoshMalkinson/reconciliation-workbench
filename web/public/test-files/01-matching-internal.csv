@@ -1,0 +1,4 @@
+instrument_id,instrument_name,as_of,currency,units,market_value
+TEST-EQUITY,Fictional Equity Fund,2026-10-12,ZAR,1000,120000.00
+TEST-BOND,Fictional Bond Fund,2026-10-12,ZAR,2500,255000.00
+TEST-CASH,Fictional Cash Fund,2026-10-12,ZAR,10000,10000.00

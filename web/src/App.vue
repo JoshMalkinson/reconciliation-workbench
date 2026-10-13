@@ -954,6 +954,9 @@ onMounted(async () => {
           ><a href="/samples/administrator.csv" download
             >Download administrator sample ↗</a
           >
+          <a href="/reconcile-test-files.zip" download
+            >Download test pack: matching, differences and invalid data ↗</a
+          >
           <div class="import-note">
             Identifiers are matched exactly or through an approved mapping.
             Similar names alone never create a match.

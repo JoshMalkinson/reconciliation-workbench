@@ -1,0 +1,5 @@
+provider_code,security_id,description,valuation_date,ccy,quantity,value
+TEST-MAP-1,,Fictional Equity Class A,2026-10-12,ZAR,980,117600.00
+TEST-EXT-2,TEST-BOND,Fictional Bond,2026-10-12,ZAR,2505,255000.00
+TEST-EXT-3,TEST-CASH,Fictional Cash,2026-10-12,ZAR,10000,9900.00
+TEST-EXT-4,TEST-ALT,Fictional Alternative Fund,2026-10-12,ZAR,200,22000.00

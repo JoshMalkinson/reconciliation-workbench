@@ -1,0 +1,29 @@
+RECONCILE TEST FILES — fictional data only
+
+Unzip this folder. Open the live app and click New import.
+Choose the internal and administrator files with the SAME numbered prefix,
+then click Compare files. Upload the CSV files, not this ZIP or guide.
+
+01 — MATCHING
+Three records; all three match. Select All records to see them, because
+All exceptions is the default filter. No review is needed.
+
+02 — DIFFERENCES AND MAPPING
+On first import: five comparison records, all exceptions.
+TEST-BOND: administrator has 5 extra units, with equal value.
+TEST-CASH: equal units, but administrator value is ZAR 100 lower.
+TEST-ALT: administrator-only holding.
+TEST-EQUITY and TEST-MAP-1 start as two separate unmatched holdings.
+Inspect TEST-MAP-1, choose TEST-EQUITY, enter a reviewer and explanation,
+and approve the mapping. Click Rerun comparison.
+Now there are four records: TEST-EQUITY shows -20 units and -ZAR 2,400.
+Add a review note, mark it reviewed, then export CSV.
+Reviewing keeps the discrepancy visible; it records your decision.
+Mappings persist, so importing this pair again will use the approved mapping.
+
+03 — INTENTIONALLY INVALID
+Administrator row 2 contains 'oops' in quantity. Import must show a validation
+error and save no new run. Replace 'oops' with 1000 to make it valid, or use 01.
+
+Your browser workspace lasts 7 days and supports up to 20 runs.
+Keep these files and export any results you want to retain.
