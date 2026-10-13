@@ -20,6 +20,7 @@ for BUCKET in "$DATA_BUCKET" "$BUILD_BUCKET"; do
 done
 gcloud storage buckets add-iam-policy-binding "gs://$DATA_BUCKET" --member="serviceAccount:$RUNTIME" --role=roles/storage.objectUser
 gcloud storage buckets add-iam-policy-binding "gs://$BUILD_BUCKET" --member="serviceAccount:$BUILDER" --role=roles/storage.objectAdmin
+gcloud storage buckets add-iam-policy-binding "gs://$BUILD_BUCKET" --member="serviceAccount:$BUILDER" --role=roles/storage.legacyBucketReader
 if ! gcloud artifacts repositories describe reconcile --location="$REGION" --project="$PROJECT" >/dev/null 2>&1; then
   gcloud artifacts repositories create reconcile --repository-format=docker --location="$REGION" --project="$PROJECT" --description='Reconcile demo images'
 fi
